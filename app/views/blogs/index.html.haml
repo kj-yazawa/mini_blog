@@ -1,4 +1,6 @@
 %h1 Listing blogs
+%div.notice= notice
+
 %table
   %thead
     %tr
@@ -9,6 +11,6 @@
       %tr
         %td= blog.title
         %td= link_to 'Show', blog
-        %td= link_to 'Edit', edit_blog_path
+        %td= link_to 'Edit', edit_blog_path(blog)
         %td= link_to 'Destroy', blog, method: :delete, data: { confirm: 'ブログ「#{blog.title}」を削除します。よろしいですか？' }
 = link_to 'New Blog', new_blog_path

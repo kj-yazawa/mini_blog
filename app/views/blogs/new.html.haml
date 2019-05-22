@@ -1,2 +1,8 @@
-%h1 Blogs#new
-%p Find me in app/views/blogs/new.html.haml
+%h1 New blog
+= form_with model: @blog, local: true do |f|
+  .field
+    = f.label :title
+    = f.text_field :title
+  .actions
+    = f.submit 'Save'
+= link_to 'Back', blogs_path
