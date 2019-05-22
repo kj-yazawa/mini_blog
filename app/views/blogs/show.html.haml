@@ -1,2 +1,19 @@
-%h1 Blogs#show
-%p Find me in app/views/blogs/show.html.haml
+%h1 Blog details
+
+%table
+  %tbody
+    %tr
+      %th ID
+      %td= @blog.id
+    %tr
+      %th タイトル
+      %td= @blog.title
+    %tr
+      %th 作成日時
+      %td= @blog.created_at
+    %tr
+      %th 更新日時
+      %td= @blog.updated_at
+= link_to 'Back', blogs_path
+|
+= link_to 'Edit', edit_blog_path(@blog)

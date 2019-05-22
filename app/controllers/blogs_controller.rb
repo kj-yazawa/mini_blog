@@ -4,9 +4,11 @@ class BlogsController < ApplicationController
   end
 
   def show
+    @blog = Blog.find(params[:id])
   end
 
   def edit
+    @blog = Blog.find(params[:id])
   end
 
   def index
@@ -20,6 +22,18 @@ class BlogsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def update
+    blog = Blog.find(params[:id])
+    blog.update!(blog_params)
+    redirect_to blogs_url, notice: "ブログ「#{blog.title}」を更新しました。"
+  end
+
+  def destroy
+    blog = Blog.find(params[:id])
+    blog.destroy!
+    redirect_to blogs_url, notice: "ブログ「#{blog.title}」を削除しました。"
   end
 
   private
