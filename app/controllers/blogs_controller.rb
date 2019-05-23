@@ -5,6 +5,7 @@ class BlogsController < ApplicationController
 
   def show
     @blog = Blog.find(params[:id])
+    @entries = Entry.where(blog_id: params[:id])
   end
 
   def edit

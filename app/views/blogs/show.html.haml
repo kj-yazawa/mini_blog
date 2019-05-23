@@ -1,19 +1,23 @@
-%h1 Blog details
-
-%table
-  %tbody
-    %tr
-      %th ID
-      %td= @blog.id
-    %tr
-      %th タイトル
-      %td= @blog.title
-    %tr
-      %th 作成日時
-      %td= @blog.created_at
-    %tr
-      %th 更新日時
-      %td= @blog.updated_at
+%h1 Title: #{@blog.title}
 = link_to 'Back', blogs_path
 |
 = link_to 'Edit', edit_blog_path(@blog)
+
+<br />
+<hr />
+
+%h1 Listing Entries
+%table
+  %tr
+    %th Title
+    %th Body
+    %th(colspan="3")
+  - @entries.each do |entry|
+    %tr
+      %th= entry.title
+      %th= entry.body
+      %th= link_to 'Show', blog_entry_path(entry)
+      %th= link_to 'Edit', edit_blog_entry_path(entry)
+      %th= link_to 'Destroy', blog_entry_path(@blog), method: :delete, data: { confirm: "エントリー「#{entry.title}」を削除します。よろしいですか？" }
+      
+= link_to 'New Entry', new_blog_entry_path(@blog.id)
