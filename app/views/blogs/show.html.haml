@@ -16,8 +16,8 @@
     %tr
       %th= entry.title
       %th= entry.body
-      %th= link_to 'Show', blog_entry_path(entry)
-      %th= link_to 'Edit', edit_blog_entry_path(entry)
-      %th= link_to 'Destroy', blog_entry_path(@blog), method: :delete, data: { confirm: "エントリー「#{entry.title}」を削除します。よろしいですか？" }
+      %th= link_to 'Show', blog_entry_path(@blog, entry)
+      %th= link_to 'Edit', edit_blog_entry_path(@blog, entry)
+      %th= link_to 'Destroy', blog_entry_path(@blog, entry), method: :delete, data: { confirm: "エントリー「#{entry.title}」を削除します。よろしいですか？" }
       
 = link_to 'New Entry', new_blog_entry_path(@blog.id)
