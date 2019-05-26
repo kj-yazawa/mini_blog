@@ -5,6 +5,8 @@ class EntriesController < ApplicationController
   end
 
   def edit
+    @blog = Blog.find(params[:blog_id])
+    @entry = Entry.find(params[:id])
   end
 
   def show
@@ -16,6 +18,15 @@ class EntriesController < ApplicationController
       redirect_to blog_url(params[:blog_id]), notice: "エントリー「#{@entry.title}」を登録しました。"
     else
       render :new
+    end
+  end
+
+  def update
+    @entry = Entry.find(params[:id])
+    if @entry.update(entry_params)
+      redirect_to blog_url(params[:blog_id]), notice: "エントリー「#{@entry.title}」を更新しました。"
+    else
+      render :edit
     end
   end
 
