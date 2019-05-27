@@ -10,6 +10,13 @@ class EntriesController < ApplicationController
   end
 
   def show
+    @blog = Blog.find(params[:blog_id])
+    @entry = Entry.where(blog_id: params[:blog_id], id: params[:id]).first
+    if @entry.blank?
+      redirect_back(fallback_location: root_path)
+    end
+    @comment = Comment.new
+    @comments = Comment.where(entry_id: params[:id])
   end
   
   def create
