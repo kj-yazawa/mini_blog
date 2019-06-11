@@ -5,6 +5,7 @@ class BlogsController < ApplicationController
 
   def show
     @blog = Blog.find(params[:id])
+    # @blog = Blog.where("id = #{params[:id]}").limit(1).first
     @entries = Entry.where(blog_id: params[:id])
   end
 
