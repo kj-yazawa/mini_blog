@@ -7,3 +7,5 @@ Blog:　#{@blog.title}
 Entry: #{@entry.title}
 %br
 Comment: #{@comment.body}
+%br
+= url_for(controller: :entries, action: :show, blog_id: @blog.id, id: @entry.id, only_path: false, protocol: 'http')
