@@ -1,4 +1,9 @@
-= form_with model: blog do |f|
+- if blog.errors.present?
+  %ul#error_explanation
+    - blog.errors.full_messages.each do |message|
+      %li= message
+
+= form_with model: blog, local: true do |f|
   .field
     = f.label :title
     = f.text_field :title

@@ -18,9 +18,9 @@ class BlogsController < ApplicationController
   end
 
   def create
-    blog = Blog.new(blog_params)
-    if blog.save
-      redirect_to blogs_url, notice: "ブログ「#{blog.title}」を登録しました。"
+    @blog = Blog.new(blog_params)
+    if @blog.save
+      redirect_to blogs_url, notice: "ブログ「#{@blog.title}」を登録しました。"
     else
       render :new
     end
