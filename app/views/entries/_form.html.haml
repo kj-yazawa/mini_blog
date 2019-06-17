@@ -1,9 +1,4 @@
-= form_for [@blog, @entry] do |f|
-  .field
-    = f.label :title
-    = f.text_field :title
-  .field
-    = f.label :body
-    = f.text_area :body
-  .actions
-    = f.submit 'Save'
+= simple_form_for [@blog, @entry] do |f|
+  = f.input :title
+  = f.input :body, as: :text
+  = f.button :submit
