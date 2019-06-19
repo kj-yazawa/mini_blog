@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_18_112435) do
+ActiveRecord::Schema.define(version: 2019_06_19_114119) do
 
   create_table "blogs", force: :cascade do |t|
     t.string "title"
@@ -42,6 +42,11 @@ ActiveRecord::Schema.define(version: 2019_06_18_112435) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
+    t.string "name"
+    t.string "provider"
+    t.string "uid"
+    t.string "token"
+    t.string "meta"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
