@@ -66,7 +66,7 @@ gem 'haml-rails'
 gem 'rspec-rails', '~> 3.7'
 gem 'simple_form'
 gem 'devise'
-gem 'omniauth', '~> 1.8', '>= 1.8.1'
+gem 'omniauth'
 gem 'omniauth-oauth2'
 gem "omniauth-google-oauth2"
 gem 'dotenv-rails'
