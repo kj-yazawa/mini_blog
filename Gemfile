@@ -71,3 +71,5 @@ gem 'omniauth-oauth2'
 gem "omniauth-google-oauth2"
 gem 'dotenv-rails'
 gem 'enumerize'
+gem 'carrierwave', '~> 1.0'
+

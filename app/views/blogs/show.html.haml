@@ -1,5 +1,7 @@
 %h1 Title: #{@blog.title}
 %h2 Category: #{@blog.category_text}
+= image_tag(@blog.avatar.to_s) if @blog.avatar?
+<br />
 = link_to 'Back', blogs_path
 |
 = link_to 'Edit', edit_blog_path(@blog)
