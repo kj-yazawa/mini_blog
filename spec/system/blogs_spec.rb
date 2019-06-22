@@ -9,7 +9,7 @@ RSpec.describe 'Blog管理', type: :system do
       click_button 'Save'
       sleep 1.0
     }.to change(Blog, :count).by(0)
-    expect(page).to have_content "Title can't be blank"
+    expect(page).to have_content "Please enter this field"
   end
 
   scenario 'Blogの新規作成時にtitleを入力した場合はデータが保存され閲覧画面に遷移すること' do

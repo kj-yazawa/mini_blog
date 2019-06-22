@@ -1,5 +1,5 @@
 = simple_form_for(blog) do |f|
-  = f.input :title, label: 'title: ', error: 'Please enter this field'
+  = f.input :title, label: 'Title: ', error: 'Please enter this field'
   = f.select :category, Blog.category.options, label: 'category: '
   = f.file_field :avatar
   = f.button :submit, 'Save'
