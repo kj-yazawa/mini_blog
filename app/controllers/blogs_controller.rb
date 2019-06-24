@@ -14,7 +14,8 @@ class BlogsController < ApplicationController
   end
 
   def index
-    @blogs = Blog.all
+    @q = Blog.ransack(params[:q])
+    @blogs = @q.result
   end
 
   def create
